@@ -164,7 +164,7 @@ html {
    margin-top: 46px;
    padding-top: 50%;
    background-color: #fff;
-   background: url('/assets/img/chicago.jpg') top center / cover no-repeat;
+   background: url('../img/chicago.jpg') top center / cover no-repeat;
 
 }
 
