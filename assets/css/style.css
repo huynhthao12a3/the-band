@@ -1,0 +1,389 @@
+/*
+
+1. Từ ngoài vào trong
+2. Từ trên xuống dưới
+3. Từ tổng quan đến chi tiết
+
+----------
+
+1. vị trí
+2. kích thước (chiều rộng + cao)
+3. màu sắc 
+4. kiểu dáng (kiểu chữ, hình tròn, vuông,...) 
+
+*/
+html {
+   font-family: "Lato",sans-serif;
+   scroll-behavior: smooth;
+}
+
+/* Common */
+.clear {
+   clear: both;
+}
+.text-white {
+   color: #fff !important;
+}
+
+.text-center {
+   text-align: center !important;
+}
+
+.row {
+   margin-left: -8px;
+   margin-right: -8px;
+}
+
+.row::after {
+   content: "";
+   display: block;
+   clear: both;
+}
+
+.col {
+   float: left;
+   padding-left: 8px;
+   padding-right: 8px;
+}
+
+.col-full {
+   width: 100%;
+}
+
+.col-half {
+   width: 50%;
+}
+
+.col-third {
+   width: calc(100%/3);
+}
+
+.mt-8 {
+   margin-top: 8px !important;
+}
+
+.mt-16 {
+   margin-top: 16px !important;
+}
+
+/* Main */
+#main {  
+   width: 100%;
+}
+
+/* ----- header */
+#header {
+   position: fixed;
+   top: 0;
+   right: 0;
+   left: 0;
+   height: 46px;
+   background-color: #000;
+   display: flex;
+   justify-content: space-between;
+   z-index: 1;
+}
+
+/* ----- navigation  */
+
+#nav > li {
+   display: inline-block;
+
+}
+
+#nav li {
+   position: relative;
+   list-style: none;
+
+}
+
+#nav li a {
+   color:#fff;
+   text-decoration: none;
+   line-height: 46px;
+   padding: 0 24px;
+   display: block;
+}
+
+#nav li:hover > a {
+   color:#000;
+   background-color: #CCCCCC;
+}
+
+#nav li:hover .subnav {
+   display: block;
+}
+
+#nav > li > a {
+   text-transform: uppercase;
+
+}
+
+#nav .subnav {
+   display: none;
+   position: absolute;
+   background-color: #fff;
+   box-shadow: 0 0 8px #ccc;
+}
+
+#nav .subnav a {
+   color: #000;
+   line-height:38px;
+   padding: 0 16px;
+   min-width: 160px;
+}
+
+.nav-arrow-down {
+   font-size: 12px;
+}
+
+#header .search-btn {
+   height: 46px;
+   padding: 0 24px;
+}
+
+#header .search-btn:hover {
+   background-color: red;
+   cursor: pointer;
+}
+
+#header .search-icon  {
+   font-size: 20px;
+   color: #fff;
+   line-height: 46px;
+   font-weight: 700;
+}
+/* ----- slider  */
+#main-content {
+   max-width: 2000px;
+   margin-left: auto;
+   margin-right: auto;
+}
+#slider {
+   position: relative;
+   margin-top: 46px;
+   padding-top: 50%;
+   background-color: #fff;
+   background: url('/assets/img/chicago.jpg') top center / cover no-repeat;
+
+}
+
+#slider .text-content {
+   position: absolute;
+   bottom: 48px;
+   color: #fff;
+   left: 50%;
+   transform: translateX(-50%);
+   text-align: center;
+}
+
+#slider .text-heading {
+   font-weight: 500;
+   margin-bottom: 10px;
+
+}
+
+#slider .text-description {
+   margin-top: 15px;
+}
+
+/* ---------- content  */
+
+#content {
+}
+
+#content .content-section {
+   width: 800px;
+   margin: 0 auto;
+   padding: 64px 16px;
+}
+
+#content .section-heading {
+   font-size: 30px;
+   font-weight: 400;
+   text-align: center;
+   letter-spacing: 8px;
+}
+
+#content .section-sub-heading {
+   font-size: 15px;
+   text-align: center;
+   margin-top: 25px;
+   font-style: italic;
+   opacity: 0.6;
+}
+
+#content .about-text {
+   margin-top: 25px;
+   font-size: 15px;
+   text-align: justify;
+   line-height: 1.4;
+}
+
+/* --- about section */
+#content .members-list {
+   margin: 48px 0;
+}
+
+#content .member-name {
+   font-size: 15px;
+}
+
+#content .member-avatar {
+   width: 152px;
+   margin-top: 15px;
+   border-radius: 4px;
+}
+
+/* --- tour section  */
+.tour-section {
+   background-color: #000;
+}
+
+.tickets-list {
+   margin-top: 40px;
+   background-color: #fff;
+}
+.tickets-list li {
+   list-style-type: none;
+   color: #757575;
+   font-size: 16px;
+   padding: 11px 16px;
+   border-bottom: 1px solid #ddd;
+}
+
+.tickets-list .sold-out {
+   background-color: #f44336;
+   color: #fff;
+   padding: 3px 4px;
+   margin-left: 16px;
+}
+
+.tickets-list .quantity {  
+   background-color: #000;
+   color: #fff;
+   padding: 2px 6px;
+   float: right;
+   border-radius: 50%;
+
+}
+
+/* --- place */
+.place-list {
+   padding: 32px 0;
+}
+
+.place-item {
+   margin-bottom: 16px;
+}
+
+.place-img {
+   width : 100%;
+   display: block;
+}
+
+.place-body {
+   background-color: #fff;
+   padding: 16px;
+   font-size: 15px;
+}
+
+.place-heading {
+   font-size: 15px;
+   font-weight: 600;
+}
+
+.place-time {
+   margin-top: 15px;
+   opacity: 0.6;
+}
+
+.place-desc {
+   margin-top: 15px;
+   line-height: 1.4;
+}
+
+.place-buy-btn {
+   display: inline-block;
+   text-decoration: none;
+   background-color: #000;
+   color: #fff;
+   margin-top: 15px;
+   padding: 10px 16px;
+}
+
+.place-buy-btn:hover {
+   color: #000;
+   background-color: #ccc;
+}
+
+/* ---------- Contact */
+.contact-content {
+   margin-top: 48px;
+}
+
+.contact-info {
+   font-size: 18px;
+   line-height: 1.6;
+   font-weight: 600;
+}
+
+.contact-info i[class*="ti-"] {
+   width: 30px;
+   display: inline-block;
+   font-weight: bold;
+
+}
+
+.contact-form {
+   font-size: 15px;
+}
+
+.contact-form .form-control {
+   padding: 8px;
+   border: 1px solid #ccc;
+   width: 100%;
+}
+
+.contact-form .form-submit-btn {
+   background-color: #000;
+   color: #fff;
+   padding: 10px 16px;
+   float: right;
+   border: none;
+}
+
+.contact-form .form-submit-btn:hover {
+   cursor: pointer;
+   background-color: #ccc;
+   color: #000;
+}
+
+/* Map */
+.map-section img {
+   width: 100%;
+}
+
+/* --------- Footer */
+#footer {
+   padding: 64px 16px;
+   text-align: center;
+}
+
+#footer .social-list {
+   font-size: 24px;
+}
+
+#footer .social-list a {
+   color: #000;
+   opacity: 0.6;
+   text-decoration: none;
+}
+#footer .copyright:hover,
+#footer .social-list a:hover {
+   opacity: 0.4;
+}
+
+#footer .copyright {
+   opacity:0.6;
+}
