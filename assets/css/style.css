@@ -79,12 +79,14 @@ html {
    left: 0;
    height: 46px;
    background-color: #000;
-   display: flex;
    justify-content: space-between;
    z-index: 1;
 }
 
 /* ----- navigation  */
+#nav {
+   float: left;
+}
 
 #nav > li {
    display: inline-block;
@@ -137,16 +139,30 @@ html {
    font-size: 12px;
 }
 
+#header .mobile-menu-btn {
+   display:none;
+}
+
+#header .mobile-menu-btn,
 #header .search-btn {
    height: 46px;
    padding: 0 24px;
+   float: right;
 }
 
+#header .mobile-menu-btn:hover {
+   background-color: #ccc;
+}
+
+#header .mobile-menu-btn:hover .menu-icon {
+   color: #000;
+}
 #header .search-btn:hover {
    background-color: red;
    cursor: pointer;
 }
 
+#header .menu-icon,
 #header .search-icon  {
    font-size: 20px;
    color: #fff;
@@ -194,6 +210,7 @@ html {
 
 #content .content-section {
    width: 800px;
+   max-width: 100%;
    margin: 0 auto;
    padding: 64px 16px;
 }
@@ -222,7 +239,8 @@ html {
 
 /* --- about section */
 #content .members-list {
-   margin: 48px 0;
+   margin-top: 48px;
+   margin-bottom: 48px;
 }
 
 #content .member-name {
@@ -310,6 +328,7 @@ html {
    color: #fff;
    margin-top: 15px;
    padding: 10px 16px;
+   text-align: center;
 }
 
 .place-buy-btn:hover {

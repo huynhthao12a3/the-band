@@ -8,6 +8,7 @@
    <link rel="icon" href="./assets/img/Logo.png">
    <link rel="stylesheet" href="./assets/css/style.css">
    <link rel="stylesheet" href="./assets/css/reset.css">
+   <link rel="stylesheet" href="./assets/css/responsive.css">
    <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
    <title>The Band</title>
 </head>
@@ -32,8 +33,13 @@
                </ul>
             </li>
          </ul>
+
          <div class="search-btn">
             <i class="search-icon ti-search"></i>
+         </div>
+
+         <div id="mobile-menu" class="mobile-menu-btn">
+            <i class="menu-icon ti-menu"></i>
          </div>
       </div>
 
@@ -63,17 +69,17 @@
                </p>
 
                <div class="row members-list">
-                  <div class="col col-third text-center">
+                  <div class="member-item col col-third text-center">
                      <p class="member-name">Name</p>
                      <img src="./assets/img/bandmember.jpg" alt="Name" class="member-avatar">
                   </div>
 
-                  <div class="col col-third text-center">
+                  <div class="member-item col col-third text-center">
                      <p class="member-name">Name</p>
                      <img src="./assets/img/bandmember.jpg" alt="Name" class="member-avatar">
                   </div>
 
-                  <div class="col col-third text-center">
+                  <div class="member-item col col-third text-center">
                      <p class="member-name">Name</p>
                      <img src="./assets/img/bandmember.jpg" alt="Name" class="member-avatar">
                   </div>
@@ -100,7 +106,7 @@
                            <h3 class="place-heading">New York</h3>
                            <div class="place-time">Fri 27 Nov 2016</div>
                            <div class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</div>
-                           <a href="#" class="place-buy-btn">Buy Tickets</a>
+                           <a href="#" class="place-buy-btn s-full-width">Buy Tickets</a>
                         </div>
                      </div>
 
@@ -110,7 +116,7 @@
                            <h3 class="place-heading">Paris</h3>
                            <div class="place-time">Sat 28 Nov 2016</div>
                            <div class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</div>
-                           <a href="#" class="place-buy-btn">Buy Tickets</a>
+                           <a href="#" class="place-buy-btn s-full-width">Buy Tickets</a>
                         </div>
                      </div>
 
@@ -120,7 +126,7 @@
                            <h3 class="place-heading">San Francisco</h3>
                            <div class="place-time">Sun 29 Nov 2016</div>
                            <div class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</div>
-                           <a href="#" class="place-buy-btn">Buy Tickets</a>
+                           <a href="#" class="place-buy-btn s-full-width">Buy Tickets</a>
                         </div>
                      </div>
                   </div>
@@ -134,31 +140,31 @@
                <p class="section-sub-heading">Fan? Drop a note!</p>
 
                <div class="row contact-content">
-                  <div class="col col-half contact-info">
+                  <div class="col col-half contact-info s-col-full">
                      <p><i class="ti-location-pin"></i>Chicago, US</p>
                      <p><i class="ti-mobile"></i>Phone: +00 151515</p>
                      <p><i class="ti-email"></i>Email: huynhthao12a3@gmail.com</p>
                   </div>
 
-                  <div class="col col-half contact-form">
+                  <div class="col col-half contact-form s-col-full">
                      <form action="">
 
                         <div class="row">
-                           <div class="col col-half">
+                           <div class="col col-half s-col-full">
                               <input type="text" name="" id="" placeholder="Name" required class="form-control">
                            </div>
-                           <div class="col col-half">
-                              <input type="text" name="" id="" placeholder="Email" required class="form-control">
+                           <div class="col col-half s-col-full s-mt-8">
+                              <input type="email" name="" id="" placeholder="Email" required class="form-control">
                            </div>
                         </div>
 
                         <div class="row mt-8">
-                           <div class="col col-full">
+                           <div class="col col-full s-col-full">
                               <input type="text" name="" id="" placeholder="Message" required class="form-control">
                            </div>
                         </div>
 
-                        <input type="submit" class="form-submit-btn mt-16" value="SEND">
+                        <input type="submit" class="s-full-width form-submit-btn mt-16" value="SEND">
                      </form>
                   </div>
                </div>
@@ -183,6 +189,37 @@
          </div>
          <p class="copyright">Powered by <a href="">w3.css</a></p>
       </div>
+
+      <script>
+         var header = document.getElementById('header');
+         var mobileMenu = document.getElementById('mobile-menu');
+
+         // Đóng/Mở mobile menu
+         mobileMenu.onclick = function () {
+            var isClose = header.clientHeight === 46
+            if (isClose) {
+               header.style.height = 'auto';
+            } else {
+               header.style.height = null;
+            }
+         }
+
+         // Auto đóng
+         var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+         for (var i = 0; i < menuItems.length; i++) {
+            var menuItem = menuItems[i];
+
+            menuItem.onclick = function (event) {
+               var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+               if (isParentMenu) {
+                  // Bỏ qua mặc định trở về đầu trang
+                  event.preventDefault();
+               } else {
+                  header.style.height = null;
+               }
+            }
+         }
+      </script>
 </body>
 
 </html>
