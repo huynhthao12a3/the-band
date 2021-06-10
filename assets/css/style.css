@@ -191,6 +191,7 @@ html {
    left: 50%;
    transform: translateX(-50%);
    text-align: center;
+   text-shadow: 0 0 1px #000;
 }
 
 #slider .text-heading {
@@ -329,6 +330,8 @@ html {
    margin-top: 15px;
    padding: 10px 16px;
    text-align: center;
+   appearance: none;
+   -webkit-appearance: none;
 }
 
 .place-buy-btn:hover {

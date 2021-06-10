@@ -1,7 +1,35 @@
+@media (max-width: 63.9375em) {
 
+   #nav .subnav a {
+      padding: 5px 12px;
+   }
+
+   .place-buy-btn{
+      padding: 15px 16px;
+   }
+
+   .contact-form .form-submit-btn {
+      padding: 16px 16px;
+   }
+
+   .contact-info {
+      line-height: 2;
+   }
+   .contact-form .form-control{
+      padding: 16px;
+   }
+   #footer .social-list {
+      font-size: 48px;
+   }
+
+   #footer .social-list a {
+      margin: 0 8px;
+   }
+
+}
 
 /* Điện Thoại */
-@media (max-width: 740px) {
+@media (max-width: 46.1875em) {
 
    .s-full-width,
    .s-col-full {
@@ -11,7 +39,7 @@
    .s-mt-8 {
       margin-top: 8px;
    }
-   
+
    #nav {
       display:block;
       width: 100%;
@@ -67,4 +95,5 @@
    .contact-form {
       margin-top: 16px;
    }
+
 }
